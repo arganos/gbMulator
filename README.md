@@ -7,21 +7,21 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 
 ###Milestones:
 
-Opcodes implemented
-CPU finalized (cpu_instrs.gb 100%, instr_timing.gb 100%)
-Display (Background, Window and Sprites seem to work. OAM Bug not implemented)
-Input
-MBC1
+1. Opcodes implemented
+2. CPU finalized (cpu_instrs.gb 100%, instr_timing.gb 100%)
+3. Display (Background, Window and Sprites seem to work. OAM Bug not implemented)
+4. Input
+5. MBC1
 
 ###Future Goals:
 
-Save states
-MBC 3/5/7 Hu1/3
-Intern Debugger <---------
-Color Game Boy support | NOT contradictory ;-)
-Less Bugs inside <---------
-Sound Support
-Link Cable Support (Pipe? Online?)
+1. Save states
+2. MBC 3/5/7 Hu1/3
+3. Intern Debugger <---------
+4. Color Game Boy support | NOT contradictory ;-)
+5. Less Bugs inside <---------
+6. Sound Support
+7. Link Cable Support (Pipe? Online?)
 
 ###Games tested to work:
 
