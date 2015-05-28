@@ -86,3 +86,12 @@ int gb_timer_state::loadINT(gb_interrupt_state *_gb_int) {
     gb_int = _gb_int;
     return 1;
 }
+
+void gb_timer_state::reset() {
+    tima = 0;
+    tac = 0;
+    tma = 0;
+
+    clock = 0;
+    div_clock = 0;
+}

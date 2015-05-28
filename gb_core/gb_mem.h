@@ -108,6 +108,8 @@ public:
 	
     int loadBIOS(string filename);
     int loadROM(string filename);
+
+    void reset();
 };
 
 #endif

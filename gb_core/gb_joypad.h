@@ -9,15 +9,12 @@
 #ifndef __Game_Boy_Emulator__gb_joypad__
 #define __Game_Boy_Emulator__gb_joypad__
 
-#include "gb_input.h"
 #include "gb_mem.h"
 
 #include "gb_interrupt.h"
 
 class gb_joypad_state {
 private:
-    gb_input input;
-    
     //Memory
     gb_mem_state *gb_mem;
     //Interrupts
@@ -27,11 +24,25 @@ private:
     
 public:
     gb_joypad_state();
+
+    bool pressedA,
+         pressedB,
+         pressedStart,
+         pressedSelect,
+         pressedUp,
+         pressedDown,
+         pressedRight,
+         pressedLeft;
     
+
     int loadMEM(gb_mem_state *_gb_mem);
     int loadINT(gb_interrupt_state *_gb_int);
     
+    void keyDown(char key);
+    void keyUp(char key);
+
     void execute();
+    void reset();
 };
 
 

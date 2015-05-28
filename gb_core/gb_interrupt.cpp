@@ -45,3 +45,14 @@ void gb_interrupt_state::execute() {
     
     gb_mem->wb(IO_REG_IF, int_f);
 }
+
+
+void gb_interrupt_state::reset() {
+    if (gb_mem != 0) {
+        clear_vblank();
+        clear_lcdc();
+        clear_timer();
+        clear_serial();
+        clear_htl();
+    }
+}

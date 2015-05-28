@@ -29,6 +29,7 @@ gb_cpu_state::gb_cpu_state() {
     
     //Init Params
     halted  = 0;
+    ime = 0;
     
     //Init OC-Tables
     
@@ -830,6 +831,21 @@ int gb_cpu_state::execute() {
     
     
     return (t+(1<<16)-prev_t)%(1<<16);
+}
+
+void gb_cpu_state::reset() {
+    //Reset of Registers
+    a = b = c = d = e = f = h = l = 0;
+
+    sp = 0;
+    pc = 0;
+
+    //Reset of clocks
+    t = m = 0;
+
+    //Init Params
+    halted  = 0;
+    ime = 0;
 }
 
 int gb_cpu_state::loadMEM(gb_mem_state *_gb_mem) {

@@ -31,6 +31,7 @@ public:
     int loadINT(gb_interrupt_state *_gb_int);
     
     void execute(int cycles);
+    void reset();
 };
 
 #endif /* defined(__Game_Boy_Emulator__gb_timer__) */

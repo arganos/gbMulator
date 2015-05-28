@@ -90,6 +90,7 @@ public:
     int loadINT(gb_interrupt_state *_gb_int);
     
     void execute(int cycles);
+    void reset();
 };
 
 

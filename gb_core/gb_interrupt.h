@@ -62,6 +62,7 @@ public:
     void clear_htl() { is_htl = 0;gb_mem->resetBit(IO_REG_IF, IO_REG_IEF_HTL_BIT);clear();};
     
     void execute();
+    void reset();
 };
 
 #endif /* defined(__Game_Boy_Emulator__gb_interrupt__) */

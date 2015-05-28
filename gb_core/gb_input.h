@@ -25,8 +25,6 @@ public:
     
     
      gb_input();
-    
-    int update();
 };
 
 

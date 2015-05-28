@@ -55,7 +55,8 @@ public:
 	
 	//Executes 1 CPU Cycle
 	int execute();
-	
+    void reset();
+
 	//Load external components
     int loadMEM(gb_mem_state *_gb_mem);
     int loadINT(gb_interrupt_state *_gb_int);

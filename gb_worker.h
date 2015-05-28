@@ -19,8 +19,21 @@ public:
     gb_worker();
      ~gb_worker();
 
+    //Input
+
+    void keyDown(char key);
+    void keyUp(char key);
+
+    //Restart
+    void gb_reset();
+
+
+    QString romFileName;
+    QString biosFileName;
+
 public slots:
     void run();
+
 
 signals:
     void frameCalculated(sf::VertexArray* vert);
@@ -39,6 +52,7 @@ private:
     gb_mem_state* gb_mem;
     gb_interrupt_state* gb_int;
     gb_lcd_state* gb_lcd;
+
 };
 
 #endif // GB_WORKER_H

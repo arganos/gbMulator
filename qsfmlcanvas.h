@@ -15,6 +15,9 @@ class QSFMLCanvas : public QWidget, public sf::RenderWindow
     virtual ~QSFMLCanvas();
     virtual void OnInit();
     virtual void OnUpdate();
+
+protected:
+
     private:
     QTimer myTimer;
     bool myInitialized;

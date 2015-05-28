@@ -37,13 +37,25 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionOpen"/>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>Open</string>
+     </property>
+     <addaction name="actionROM"/>
+     <addaction name="actionBIOS"/>
+    </widget>
+    <addaction name="menuOpen"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
-  <action name="actionOpen">
+  <action name="actionROM">
    <property name="text">
-    <string>Open</string>
+    <string>ROM</string>
+   </property>
+  </action>
+  <action name="actionBIOS">
+   <property name="text">
+    <string>BIOS</string>
    </property>
   </action>
  </widget>

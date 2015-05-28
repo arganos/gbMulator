@@ -305,6 +305,12 @@ void gb_gpu_state::execute(int cycles) {
     gb_mem->wb(IO_REG_STAT, (unsigned char)stat);
 }
 
+void gb_gpu_state::reset() {
+    gpu_clock = 0;
+    mode = 2;
+    curScanLine = 0;
+}
+
 int gb_gpu_state::loadLCD(gb_lcd_state *_gb_lcd) {
     gb_lcd = _gb_lcd;
     return 1;

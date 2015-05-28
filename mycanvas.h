@@ -10,7 +10,6 @@ void OnInit();
 void OnUpdate();
 
 
-
 sf::VertexArray m_vertices;
 };
 #endif // MYCANVAS_H
