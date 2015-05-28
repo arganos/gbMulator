@@ -57,8 +57,8 @@ public:
 	int execute();
 	
 	//Load external components
-	int loadMEM(gb_mem_state &_gb_mem);
-	int loadINT(gb_interrupt_state &_gb_int);
+    int loadMEM(gb_mem_state *_gb_mem);
+    int loadINT(gb_interrupt_state *_gb_int);
 	int loadBIOS(string filename); 
 	int loadROM(string filename);
     

@@ -76,13 +76,13 @@ void gb_timer_state::execute(int cycles) {
     gb_mem->wb(IO_REG_TAC, tac);
 }
 
-int gb_timer_state::loadMEM(gb_mem_state &_gb_mem) {
+int gb_timer_state::loadMEM(gb_mem_state *_gb_mem) {
     
-    gb_mem = &_gb_mem;
+    gb_mem = _gb_mem;
     return 1;
 }
 
-int gb_timer_state::loadINT(gb_interrupt_state &_gb_int) {
-    gb_int = &_gb_int;
+int gb_timer_state::loadINT(gb_interrupt_state *_gb_int) {
+    gb_int = _gb_int;
     return 1;
 }

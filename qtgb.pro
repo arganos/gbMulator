@@ -16,31 +16,33 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     qsfmlcanvas.cpp \
     mycanvas.cpp \
-    gb_mem.cpp \
-    gb_gpu.cpp \
-    gb_cpu.cpp \
-    gb_cartridge.cpp \
-    gb_input.cpp \
-    gb_lcd.cpp \
-    gb_timer.cpp \
-    gb_interrupt.cpp \
-    gb_joypad.cpp \
-    gb_util.cpp
+    gb_core/gb_mem.cpp \
+    gb_core/gb_gpu.cpp \
+    gb_core/gb_cpu.cpp \
+    gb_core/gb_cartridge.cpp \
+    gb_core/gb_input.cpp \
+    gb_core/gb_lcd.cpp \
+    gb_core/gb_timer.cpp \
+    gb_core/gb_interrupt.cpp \
+    gb_core/gb_joypad.cpp \
+    gb_core/gb_util.cpp \
+    gb_worker.cpp
 
 
 HEADERS  += mainwindow.h \
     qsfmlcanvas.h \
     mycanvas.h \
-    gb_mem.h \
-    gb_cartridge.h \
-    gb_cpu.h \
-    gb_gpu.h \
-    gb_lcd.h \
-    gb_timer.h \
-    gb_interrupt.h \
-    gb_input.h \
-    gb_joypad.h \
-    gb_util.h
+    gb_core/gb_mem.h \
+    gb_core/gb_cartridge.h \
+    gb_core/gb_cpu.h \
+    gb_core/gb_gpu.h \
+    gb_core/gb_lcd.h \
+    gb_core/gb_timer.h \
+    gb_core/gb_interrupt.h \
+    gb_core/gb_input.h \
+    gb_core/gb_joypad.h \
+    gb_core/gb_util.h \
+    gb_worker.h
 
 FORMS    += mainwindow.ui
 
@@ -55,3 +57,6 @@ CONFIG(debug, debug|release): LIBS += -lsfml-audio -lsfml-graphics -lsfml-system
 
 INCLUDEPATH += "/usr/local/include"
 DEPENDPATH += "/usr/local/include"
+
+DISTFILES += \
+    ../Game Boy Emulator/bios.gb

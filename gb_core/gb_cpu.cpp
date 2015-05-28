@@ -832,13 +832,13 @@ int gb_cpu_state::execute() {
     return (t+(1<<16)-prev_t)%(1<<16);
 }
 
-int gb_cpu_state::loadMEM(gb_mem_state &_gb_mem) {
-    gb_mem = &_gb_mem;
+int gb_cpu_state::loadMEM(gb_mem_state *_gb_mem) {
+    gb_mem = _gb_mem;
     return 1;
 }
 
-int gb_cpu_state::loadINT(gb_interrupt_state &_gb_int) {
-    gb_int = &_gb_int;
+int gb_cpu_state::loadINT(gb_interrupt_state *_gb_int) {
+    gb_int = _gb_int;
     return 1;
 }
 

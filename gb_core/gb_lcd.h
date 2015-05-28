@@ -95,36 +95,16 @@ private:
 };
 
 
-class gb_lcd {
-    
-    
-    
+class gb_lcd_state
+{
 
-    //sf::Image img;
-    //sf::Uint8 pixels[4 * (SCREEN_WIDTH*PIXEL_SIZE) * (SCREEN_HEIGHT*PIXEL_SIZE)];
-    //sf::Texture texture;
-    //sf::Sprite sprite;
-    
-    PixelMap pxMap;
-    
-    
-    sf::Color colo[4];
 public:
-    
-    
     //Window & Screen
-    sf::RenderWindow* window;
-    
-    gb_lcd();
-    ~gb_lcd();
-    
-    void drawPixel(int x, int y, int col);
-    
-    void show();
-    
-    void clear();
-    
-    
+    gb_lcd_state();
+    void drawPixel(int x, int y, int col) ;
+
+    PixelMap pxMap;
+    sf::Color colo[4];
 };
 
 #endif /* defined(__Game_Boy_Emulator__gp_lcd__) */

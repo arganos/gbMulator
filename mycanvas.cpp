@@ -13,9 +13,7 @@ void MyCanvas::OnUpdate()
 {
     // Clear screen
     RenderWindow::clear(sf::Color(0, 128, 0));
-    // Rotate the sprite
-    mySprite.rotate(myClock.getElapsedTime().asSeconds() * 100.f);
+
     // Draw it
-    RenderWindow::draw(mySprite);
-    myClock.restart();
+    RenderWindow::draw(m_vertices);
 }

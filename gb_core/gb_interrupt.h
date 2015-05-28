@@ -35,7 +35,7 @@ private:
 public:
     
     
-    int loadMEM(gb_mem_state &_gb_mem);
+    int loadMEM(gb_mem_state *_gb_mem);
     
     //component level
     void set_vblank() { if (!gb_mem->bitSet(IO_REG_IE, IO_REG_IEF_VBLANK_BIT)) return; is_vblank = 1; is_new = 1;gb_mem->setBit(IO_REG_IF, IO_REG_IEF_VBLANK_BIT);};

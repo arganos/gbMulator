@@ -25,6 +25,8 @@ gb_gpu_state::gb_gpu_state() {
 
 void gb_gpu_state::execute(int cycles) {
     
+    shouldDisplay = 0;
+
     lcdc = gb_mem->rb(IO_REG_LCDC);
     stat = gb_mem->rb(IO_REG_STAT);
     scx = gb_mem->rb(IO_REG_SCX);
@@ -87,7 +89,6 @@ void gb_gpu_state::execute(int cycles) {
         } else if (mode == 1) {
             mode = 2;
             curScanLine = 0;
-            gb_lcd.clear();
             
             int bm[160][144] ;
             for (int x = 0; x < 160; x++)
@@ -141,7 +142,7 @@ void gb_gpu_state::execute(int cycles) {
                             if (Y < 0 || Y >= 144)
                             continue;
                             bm[X][Y] = color;
-                            gb_lcd.drawPixel(X, Y, color);
+                            gb_lcd->drawPixel(X, Y, color);
                         }
                     }
                 }
@@ -196,7 +197,7 @@ void gb_gpu_state::execute(int cycles) {
                             if (Y < 0 || Y >= 144)
                             continue;
                             bm[X][Y] = color;
-                            gb_lcd.drawPixel(X, Y, color);
+                            gb_lcd->drawPixel(X, Y, color);
                         }
                     }
                 }
@@ -242,11 +243,11 @@ void gb_gpu_state::execute(int cycles) {
                                 if (flags & (1<<7)) {
                                     if (bm[X][Y] == 0) {
                                         bm[X][Y] = color;
-                                        gb_lcd.drawPixel(X, Y, color);
+                                        gb_lcd->drawPixel(X, Y, color);
                                     }
                                     } else if (dotdata != 0){
                                     bm[X][Y] = color;
-                                    gb_lcd.drawPixel(X, Y, color);
+                                    gb_lcd->drawPixel(X, Y, color);
                                 }
                             }
                             //cout << endl;
@@ -284,33 +285,36 @@ void gb_gpu_state::execute(int cycles) {
                                 if (flags & (1<<7)) {
                                     if (bm[X][Y] == 0) {
                                         bm[X][Y] = color;
-                                        gb_lcd.drawPixel(X, Y, color);
+                                        gb_lcd->drawPixel(X, Y, color);
                                     }
                                     } else if (dotdata != 0){
                                     bm[X][Y] = color;
-                                    gb_lcd.drawPixel(X, Y, color);
+                                    gb_lcd->drawPixel(X, Y, color);
                                 }
                             }
                         }
                     }
                 }
             }
-            gb_lcd.show();
+            //Tell the Worker that he should show the frame
+           shouldDisplay = 1;
         }
     }
     gb_mem->wb(IO_REG_LY, (unsigned char)curScanLine);
     stat = ((stat>>3)<<3) + ((curScanLine==lyc)<<2)+ mode;
     gb_mem->wb(IO_REG_STAT, (unsigned char)stat);
 }
-int gb_gpu_state::loadWINDOW(sf::RenderWindow &window) {
-    gb_lcd.window = &window;
+
+int gb_gpu_state::loadLCD(gb_lcd_state *_gb_lcd) {
+    gb_lcd = _gb_lcd;
     return 1;
 }
-int gb_gpu_state::loadMEM(gb_mem_state &_gb_mem) {
-    gb_mem = &_gb_mem;
+
+int gb_gpu_state::loadMEM(gb_mem_state *_gb_mem) {
+    gb_mem = _gb_mem;
     return 1;
 }
-int gb_gpu_state::loadINT(gb_interrupt_state &_gb_int) {
-    gb_int = &_gb_int;
+int gb_gpu_state::loadINT(gb_interrupt_state *_gb_int) {
+    gb_int = _gb_int;
     return 1;
 }

@@ -8,9 +8,9 @@ public :
 MyCanvas(QWidget* Parent, const QPoint& Position, const QSize& Size);
 void OnInit();
 void OnUpdate();
-private :
-sf::Clock myClock;
-sf::Texture myImage;
-sf::Sprite mySprite;
+
+
+
+sf::VertexArray m_vertices;
 };
 #endif // MYCANVAS_H

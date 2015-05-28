@@ -10,6 +10,8 @@
 #ifndef __Game_Boy_Emulator__gb_gpu__
 #define __Game_Boy_Emulator__gb_gpu__
 
+#include <QObject>
+
 #include "gb_lcd.h"
 
 #include "gb_mem.h"
@@ -34,7 +36,14 @@
 #define IO_REG_WX  0xFF4B
 #define IO_REG_WY  0xFF4A
 
-class gb_gpu_state {
+class gb_gpu_state
+{
+
+public:
+
+    gb_gpu_state();
+
+private:
     
     short gpu_clock;
     
@@ -64,21 +73,21 @@ class gb_gpu_state {
     
     
     //LCD
-    gb_lcd gb_lcd;
+    gb_lcd_state *gb_lcd;
     
     //Memory
     gb_mem_state *gb_mem;
     //Interrupts
     gb_interrupt_state *gb_int;
-    
+
+
 public:
+
+    bool shouldDisplay;
     
-    gb_gpu_state();
-    
-    
-    int loadWINDOW(sf::RenderWindow &window);
-    int loadMEM(gb_mem_state &_gb_mem);
-    int loadINT(gb_interrupt_state &_gb_int);
+    int loadLCD(gb_lcd_state *_gb_lcd);
+    int loadMEM(gb_mem_state *_gb_mem);
+    int loadINT(gb_interrupt_state *_gb_int);
     
     void execute(int cycles);
 };

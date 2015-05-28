@@ -28,8 +28,8 @@ private:
 public:
     gb_joypad_state();
     
-    int loadMEM(gb_mem_state &_gb_mem);
-    int loadINT(gb_interrupt_state &_gb_int);
+    int loadMEM(gb_mem_state *_gb_mem);
+    int loadINT(gb_interrupt_state *_gb_int);
     
     void execute();
 };

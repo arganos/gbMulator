@@ -8,9 +8,9 @@
 
 #include "gb_interrupt.h"
 
-int gb_interrupt_state::loadMEM(gb_mem_state &_gb_mem) {
+int gb_interrupt_state::loadMEM(gb_mem_state *_gb_mem) {
     
-    gb_mem = &_gb_mem;
+    gb_mem = _gb_mem;
     return 1;
 }
 

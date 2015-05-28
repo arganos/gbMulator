@@ -86,7 +86,7 @@ bool gb_cartridge::loadCartridge(string filename) {
     
     //Read data for the remaining ROM banks
     
-    for (int i = 1; i < rom_size/GB_ROM_BANK_SIZE; i++) 
+    for (unsigned int i = 1; i < rom_size/GB_ROM_BANK_SIZE; i++)
         cartr.read((char*)rom_bank[i].data, GB_ROM_BANK_SIZE);
     
     bool ok = !cartr;

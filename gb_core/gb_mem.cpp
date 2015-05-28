@@ -369,12 +369,11 @@ int gb_mem_state::loadBIOS(string filename) {
         return 0;
     
     biosfile.read((char*)bios, GB_BIOS_SIZE);
-    
-    
-    bool ok = !biosfile;
+
+    bool ok = biosfile;
     
     biosfile.close();
-    
+
     return ok;
     
 }
@@ -384,7 +383,7 @@ int gb_mem_state::loadROM(string filename) {
     
     
     
-    return ok;
+    return !ok;
     
 }
 

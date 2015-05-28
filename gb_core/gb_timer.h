@@ -23,13 +23,12 @@ private:
     unsigned char div, tima, tma, tac;
     
      int clock, div_clock;
-    unsigned int ticks;
     
 public:
     gb_timer_state();
     
-    int loadMEM(gb_mem_state &_gb_mem);
-    int loadINT(gb_interrupt_state &_gb_int);
+    int loadMEM(gb_mem_state *_gb_mem);
+    int loadINT(gb_interrupt_state *_gb_int);
     
     void execute(int cycles);
 };
