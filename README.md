@@ -1,7 +1,7 @@
 # gbmulator
 A tiny emulator of the Nintendo Game Boy. Why? Because I decided to write an emulator. Why the Game Boy? Because its hardware is probably the least complicated around there is a lot of reference material on the internet.
 
-It's being developed on Mac OS X, however the program should remain portable thanks to the SFML, which is used to emulate the display, the input and hopefully someday the sound.
+It's being developed on Mac OS X, however the program should remain portable thanks to the SFML and QT, which are used to emulate the display, the input, the GUI and hopefully someday the sound.
 
 Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal Felber, Paul Robson, Martin Korth, kOOPa, Bowser
 
@@ -25,4 +25,8 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 
 ###Games tested to work:
 
-Tetris, Pokemon Red, Zelda: Link's Awakening.
+1. Tetris
+2. Pokemon Red (There is some glitching at the beginning however, but it works fine after the start screen)
+3. Zelda: Link's Awakening.
+4. Super Mario Land 2
+5. Super Mario Land 3
