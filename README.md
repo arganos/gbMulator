@@ -17,9 +17,9 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 
 1. Save states
 2. MBC 3/5/7 Hu1/3
-3. Intern Debugger <---------
-4. Color Game Boy support | NOT contradictory ;-)
-5. Less Bugs inside <---------
+3. Intern Debugger 
+4. Color Game Boy support 
+5. Less Bugs inside 
 6. Sound Support
 7. Link Cable Support (Pipe? Online?)
 
