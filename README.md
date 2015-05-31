@@ -1,4 +1,4 @@
-# gbmulator
+# gbMulator
 A tiny emulator of the Nintendo Game Boy. Why? Because I decided to write an emulator. Why the Game Boy? Because its hardware is probably the least complicated around there is a lot of reference material on the internet.
 
 It's being developed on Mac OS X, however the program should remain portable thanks to the SFML and QT, which are used to emulate the display, the input, the GUI and hopefully someday the sound.
@@ -16,7 +16,7 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 ###Future Goals:
 
 1. Save states
-2. MBC 3/5/7 Hu1/3
+2. MBC 2/3/5/7 Hu1/3
 3. Intern Debugger 
 4. Color Game Boy support 
 5. Less Bugs inside 
