@@ -2,7 +2,6 @@
 #include <QThread>
 #include <QObject>
 
-#include "mycanvas.h"
 #include "mainwindow.h"
 #include "gb_core/gb_lcd.h"
 

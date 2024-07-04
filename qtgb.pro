@@ -14,8 +14,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     glwidget.cpp \
-    helper.cpp \
-        mainwindow.cpp \
+    mainwindow.cpp \
     gb_core/gb_mem.cpp \
     gb_core/gb_gpu.cpp \
     gb_core/gb_cpu.cpp \
@@ -25,9 +24,7 @@ SOURCES += main.cpp\
     gb_core/gb_interrupt.cpp \
     gb_core/gb_joypad.cpp \
     gb_core/gb_util.cpp \
-    gb_worker.cpp \
-    mycanvas.cpp \
-    qsfmlcanvas.cpp
+    gb_worker.cpp
 
 
 
@@ -42,10 +39,7 @@ HEADERS  += mainwindow.h \
     gb_core/gb_joypad.h \
     gb_core/gb_util.h \
     gb_worker.h \
-    glwidget.h \
-    helper.h \
-    mycanvas.h \
-    qsfmlcanvas.h
+    glwidget.h
 
 FORMS    += mainwindow.ui
 

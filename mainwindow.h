@@ -9,7 +9,6 @@
 
 #include "gb_worker.h"
 #include "gb_core/gb_lcd.h"
-#include "qsfmlcanvas.h"
 
 namespace Ui {
 class MainWindow;
@@ -37,7 +36,6 @@ private slots:
 
 private:
      Ui::MainWindow *ui;
-     QSFMLCanvas* SFMLView;
 
      QThread* thread;
      gb_worker* worker;
