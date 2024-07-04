@@ -11,12 +11,11 @@
 #include <iostream>
 
 gb_lcd_state::gb_lcd_state() {
-
-   // pxMap = new PixelMap();
-    pxMap.create(sf::Vector2u(PIXEL_SIZE, PIXEL_SIZE), SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    for (int i = 0; i < 4; i++)
-        colo[i] = sf::Color(255-83*i, 255-83*i, 255-83*i, 255);
+    for (int x = 0; x < SCREEN_WIDTH; x++) {
+        screen.push_back(vector<int>());
+        for (int y = 0; y < SCREEN_HEIGHT; y++)
+            screen[x].push_back(0);
+    }
 }
 
 
@@ -28,7 +27,7 @@ void gb_lcd_state::drawPixel(int x, int y, int col) {
     if (y < 0 || y >= SCREEN_HEIGHT)
         return;
     
-    pxMap.setPixel(x, y, col);
+    screen[x][y] = col;
 
 }
 

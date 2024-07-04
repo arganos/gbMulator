@@ -15,8 +15,8 @@ gb_worker::gb_worker()
    gb_int = new gb_interrupt_state();
    gb_lcd = new gb_lcd_state();
 
-   romFileName = QString("/Users/gillesenglebert/Documents/Programming/Emulatoren/gbemulator/qtgb/roms/red.gb");
-   biosFileName = QString("/Users/gillesenglebert/Documents/Programming/Emulatoren/gbemulator/qtgb/bios.gb");
+   romFileName = QString("/home/gilles/Documents/gbmulator/gbMulator/game.gb");
+   biosFileName = QString("/home/gilles/Documents/gbmulator/gbMulator/bios.gb");
 
    gb_reset();
 
@@ -44,7 +44,7 @@ void gb_worker::run() {
             gb_jpd->execute();
         //check for vsync
         if (gb_gpu->shouldDisplay)
-            emit frameCalculated(&gb_lcd->pxMap.m_vertices);
+            emit frameCalculated(*gb_lcd);
     }
     emit finished();
 }

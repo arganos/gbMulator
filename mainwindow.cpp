@@ -10,9 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Create a SFML view inside the main window
-    SFMLView = new MyCanvas(this, QPoint(0, 0), QSize(SCREEN_WIDTH*PIXEL_SIZE, SCREEN_HEIGHT*PIXEL_SIZE));
-    SFMLView->show();
+    ui->openGLWidget->resize(SCREEN_WIDTH*PIXEL_SIZE, SCREEN_HEIGHT*PIXEL_SIZE);
 
     thread = new QThread;
     worker = new gb_worker();
@@ -22,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(worker, SIGNAL(finished()), thread, SLOT(quit()));
     connect(worker, SIGNAL(finished()), worker, SLOT(deleteLater()));
     connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-    connect(worker, SIGNAL(frameCalculated(sf::VertexArray*)), this, SLOT(paintFrame(sf::VertexArray*)));
+    connect(worker, SIGNAL(frameCalculated(gb_lcd_state)), this, SLOT(paintFrame(gb_lcd_state)));
     thread->start();
 }
 
@@ -108,9 +106,10 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
   }
 }
 
-void MainWindow::paintFrame(sf::VertexArray* vert)
+void MainWindow::paintFrame(gb_lcd_state state)
 {
-    SFMLView->m_vertices = *vert;
+    ui->openGLWidget->state = state;
+    ui->openGLWidget->update();
 }
 
 

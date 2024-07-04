@@ -364,7 +364,7 @@ int gb_mem_state::loadBIOS(string filename) {
     
     biosfile.read((char*)bios, GB_BIOS_SIZE);
 
-    bool ok = biosfile;
+    bool ok = biosfile.is_open();
     
     biosfile.close();
 

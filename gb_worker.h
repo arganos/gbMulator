@@ -11,6 +11,7 @@
 #include "gb_core/gb_timer.h"
 
 #include <QObject>
+#include <vector>
 
 class gb_worker : public QObject
 {
@@ -36,7 +37,7 @@ public slots:
 
 
 signals:
-    void frameCalculated(sf::VertexArray* vert);
+    void frameCalculated(gb_lcd_state state);
     void finished();
     void error(QString err);
 

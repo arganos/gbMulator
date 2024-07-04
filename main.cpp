@@ -20,12 +20,8 @@ int main(int argc, char *argv[])
 
     wnd->setWindowTitle("gbmulator");
     wnd->resize(SCREEN_WIDTH*PIXEL_SIZE, SCREEN_HEIGHT*PIXEL_SIZE);
+    //cout << wnd->windowHandle() <<endl;
     wnd->show();
-
-
-
-
-
 
     return App.exec();
 

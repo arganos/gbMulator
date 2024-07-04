@@ -63,7 +63,7 @@ void gb_timer_state::execute(int cycles) {
     while (clock >= mod) {
         tima = (tima+1)%256;
         clock-=mod;
-        cout << "TIMA = " << tima << endl;
+        //cout << "TIMA = " << tima << endl;
         if (!tima) {
             tima = tma;
             gb_int->set_timer();

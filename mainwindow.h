@@ -9,7 +9,7 @@
 
 #include "gb_worker.h"
 #include "gb_core/gb_lcd.h"
-#include "mycanvas.h"
+#include "qsfmlcanvas.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,7 +27,7 @@ public:
     void keyReleaseEvent(QKeyEvent *);
 
 public slots:
-    void paintFrame(sf::VertexArray* vert);
+    void paintFrame(gb_lcd_state state);
 
 private slots:
 
@@ -36,8 +36,8 @@ private slots:
     void on_actionBIOS_triggered();
 
 private:
-    Ui::MainWindow *ui;
-     MyCanvas* SFMLView;
+     Ui::MainWindow *ui;
+     QSFMLCanvas* SFMLView;
 
      QThread* thread;
      gb_worker* worker;
