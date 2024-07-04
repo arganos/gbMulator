@@ -5,7 +5,7 @@ It uses QT6 with OpenGL to emulate the display, the input, the GUI and hopefully
 
 Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal Felber, Paul Robson, Martin Korth, kOOPa, Bowser
 
-###Milestones:
+## Milestones:
 
 1. Opcodes implemented
 2. CPU finalized (cpu_instrs.gb 100%, instr_timing.gb 100%)
@@ -13,7 +13,7 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 4. Input
 5. MBC1
 
-###Future Goals:
+## Future Goals:
 
 1. Save states
 2. MBC 2/3/5/7 Hu1/3
@@ -22,7 +22,7 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 6. Sound Support
 7. Link Cable Support (Pipe? Online?)
 
-###Current state:
+## Current state:
 
 It runs most simple games with use the memory bank layout MBC1. So in particular early Game Boy games will run, while the more complex later games are not always compatible. I tested some freely available homebrew games such as 2friendly (https://isacben.itch.io/2friendly), which do rather well.
 ![Alt text](https://github.com/denengelbert/gbMulator/blob/master/img/title.png?raw=true)
