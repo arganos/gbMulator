@@ -28,5 +28,4 @@ It runs most simple games with use the memory bank layout MBC1. So in particular
 ![Alt text](https://github.com/denengelbert/gbMulator/blob/master/img/title.png?raw=true)
 
 ![Alt text](https://github.com/denengelbert/gbMulator/blob/master/img/gameplay.png?raw=true)
-  <img src="https://github.com/denengelbert/gbMulator/blob/master/img/gameplay.png?raw=true">
 
