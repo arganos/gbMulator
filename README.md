@@ -25,6 +25,9 @@ Sources: Game BoyTM CPU Manual by Pan of Anthrox, GABY, Marat Fayzullin, Pascal 
 ###Current state:
 
 It runs most simple games with use the memory bank layout MBC1. So in particular early Game Boy games will run, while the more complex later games are not always compatible. I tested some freely available homebrew games such as 2friendly (https://isacben.itch.io/2friendly), which do rather well.
-![Title Screen of 2friendly](https://github.com/denengelbert/gbMulator/blob/master/img/title.png?raw=true
-![Gameplay of 2friendly](https://github.com/denengelbert/gbMulator/blob/master/img/gameplay.png?raw=true
+![Alt text](https://github.com/denengelbert/gbMulator/blob/master/img/title.png?raw=true)
+  <img src="https://github.com/denengelbert/gbMulator/blob/master/img/title.png?raw=true">
+
+![Alt text](https://github.com/denengelbert/gbMulator/blob/master/img/gameplay.png?raw=true)
+  <img src="https://github.com/denengelbert/gbMulator/blob/master/img/gameplay.png?raw=true">
 
